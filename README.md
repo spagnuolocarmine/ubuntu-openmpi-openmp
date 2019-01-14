@@ -18,5 +18,5 @@ Execute che command _ssh-keygen_.
 
 # Authors and contributors
 
-- Matteo D'Auria
-- Carmine Spagnuolo
+- Matteo D'Auria (University of Salerno)
+- Carmine Spagnuolo (University of Salerno)
