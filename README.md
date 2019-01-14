@@ -2,7 +2,7 @@
 
 This project provides scripts and tutorial to install OpenMPI and OpenMP on a Ubuntu Linux.
 
-## Prerequisites
+## Prerequisites
  - Ubuntu Linux 18.04 LTS Server Edition
  - SSH Key
  
@@ -15,3 +15,8 @@ The program will create a new user pcpc and exchanges the given ssh keys.
 ### How to generate your SSH keys
 
 Execute che command _ssh-keygen_.
+
+# Authors and contributors
+
+- Matteo D'Auria
+- Carmine Spagnuolo
