@@ -16,7 +16,7 @@ The program will create a new user pcpc and exchanges the given ssh keys.
 
 Execute che command ```ssh-keygen```.
 
-### Built environment
+### Environment
 - user: pcpc
 - vim
 - htop
@@ -46,7 +46,7 @@ bar.example.com slots=2
 yow.example.com slots=4 max-slots=4
 ```
 
-# Authors and contributors
+# Authors and Contributors
 
 - Matteo D'Auria (University of Salerno)
 - Carmine Spagnuolo (University of Salerno)
