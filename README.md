@@ -6,6 +6,11 @@ This project provides scripts and tutorial to install OpenMPI and OpenMP on a Ub
  - Ubuntu Linux 18.04 LTS Server Edition - Amzon AMI ami-0f65671a86f061fcd
  - SSH Key
 
+## Cluster Scenario
+
+- 1 Master Node, here you have to generate the ssh-key and update the script.
+- N Slaves, here you have to run the script using the keys generated on the master node.
+
 ### How to generate your SSH keys
 
 Execute che command ```ssh-keygen```.
