@@ -25,6 +25,7 @@ Run the script on you machine ```source install.sh```.
 
 The program will create a new user pcpc and exchanges the given ssh keys.
 
+**After the installation manually connect on each node to share youy SSH id.**
 
 
 ### Environment
@@ -38,10 +39,11 @@ The program will create a new user pcpc and exchanges the given ssh keys.
 
 You can test your local environment using the program test.c.
 
-1. Compile the program: ```mpicc test.c -o test```
-2. Run the porgram: ```mpirun -np 2 test```
+1. Compile the program: ```mpicc -fopenmp test.c -o test```
+2. Run the porgram: ```mpirun -np 2 ./test```
 
-You can run directly on an homogeneous cluster machine that has been built using the same install script. You can run: ```mpirun -np 2 --hostfile hfile test```.
+You can run directly on an homogeneous cluster machine that has been built using the same install script. You can run: ```mpirun -np 2 --hostfile hfile ./test```.
+
 An example host-file is:
 ```
 # This is an example hostfile.  Comments begin with #
