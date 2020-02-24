@@ -39,10 +39,10 @@ The program will create a new user pcpc and exchanges the given ssh keys.
 
 You can test your local environment using the program test.c.
 
-1. Compile the program: ```mpicc -fopenmp test.c -o test```
-2. Run the porgram: ```mpirun -np 2 ./test```
+1. Compile the program: ```mpicc hello-mpi.c -o hello```
+2. Run the porgram: ```mpirun -np 2 ./hello```
 
-You can run directly on an homogeneous cluster machine that has been built using the same install script. You can run: ```mpirun -np 2 --hostfile hfile ./test```.
+You can run directly on an homogeneous cluster machine that has been built using the same install script. You can run: ```mpirun -np 2 --hostfile hfile ./hello```.
 
 An example host-file is:
 ```
