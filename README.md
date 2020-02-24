@@ -21,7 +21,7 @@ Note. By using this command without parameters the key is stored in the folder .
 
 Change the file install.sh with the generated key.
 
-Run the script on you machine ```source install.sh```.
+Run the script on you machine ```sudo bash install.sh```.
 
 The program will create a new user pcpc and exchanges the given ssh keys.
 
