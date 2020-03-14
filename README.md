@@ -11,22 +11,14 @@ This project provides scripts and tutorial to install OpenMPI and OpenMP on a Ub
 - 1 Master Node, here you have to generate the ssh-key and update the script.
 - N Slaves, here you have to run the script using the keys generated on the master node.
 
-### How to generate your SSH keys
-
-Execute che command ```ssh-keygen```.
-
-Note. By using this command without parameters the key is stored in the folder .ssh, in the file id_rsa e id_rsa.pub.
 
 ## Install
 
-Change the file install.sh with the generated key.
+Run the script on your machine ```sudo bash generateInstall.sh``` (This script generate ```install.sh```).
 
-Run the script on you machine ```sudo bash install.sh```.
+For each EC2 instance run the following command on you machine ```ssh -i <path-to-pem-file>  <connection-string-for-the-EC2-instace>  'bash -s' < install.sh```.
 
 The program will create a new user pcpc and exchanges the given ssh keys.
-
-**After the installation manually connect on each node to share youy SSH id.**
-
 
 ### Environment
 - user: pcpc
