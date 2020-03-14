@@ -14,7 +14,7 @@ This project provides scripts and tutorial to install OpenMPI and OpenMP on a Ub
 
 ## Install
 
-Run the script on your machine ```sudo bash generateInstall.sh``` (This script generate ```install.sh```).
+Run the script on your machine ```bash generateInstall.sh``` (This script generate ```install.sh```).
 
 For each EC2 instance run the following command on you machine ```ssh -i <path-to-pem-file>  <connection-string-for-the-EC2-instace>  'bash -s' < install.sh```.
 
