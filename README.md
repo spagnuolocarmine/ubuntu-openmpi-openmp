@@ -14,9 +14,11 @@ This project provides scripts and tutorial to install OpenMPI and OpenMP on a Ub
 
 ## Install
 
-1. Run the script on your machine ```bash generateInstall.sh``` (This script generate ```install.sh```).
+1. Run the script on your remote (MASTER) machine ```bash generateInstall.sh```. The script generates a ```install.sh``` with new ssh-keys.
 2. Set the passoword for the user pcpc: ```sudo passwd pcpc``
-3. For each EC2 instance run the following command on you machine ```ssh -i <path-to-pem-file>  <connection-string-for-the-EC2-instace>  'bash -s' < install.sh```.
+3. Copy on the MASTER node the pem key: ``scp -i "k.pem" k.pem ubuntu@ec2-34-239-142-46.compute-1.amazonaws.com:``
+3. For each SLAVE instance run the following command on you machine 
+```ssh -i <path-to-pem-file>  <connection-string-for-the-EC2-instace>  'bash -s' < install.sh```.
 
 The program will create a new user pcpc and exchanges the given ssh keys.
 
@@ -33,7 +35,7 @@ You can test your local environment using the program test.c.
 
 1. Compile the program: ```mpicc hello-mpi.c -o hello```
 2. Run the porgram: ```mpirun -np 2 ./hello```
-3. Run with more processes ```mpirun -np 3 --oversubscribe a.out```
+3. Run with more MPI processes on single core ```mpirun -np 3 --oversubscribe a.out```
 
 You can run directly on an homogeneous cluster machine that has been built using the same install script. You can run: ```mpirun -np 2 --hostfile hfile ./hello```.
 
