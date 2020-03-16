@@ -22,10 +22,10 @@ This project provides scripts and tutorial to install OpenMPI and OpenMP on a Ub
 ```git clone https://github.com/spagnuolocarmine/ubuntu-openmpi-openmp.git```
 4. Generates the installing script for yourt cluster:
 ```source generateInstall.sh```, results in a ```install.sh``` script with new ssh-keys for the cluster.
-5. Set the password for the user pcpc: ```sudo passwd pcpc```
+5. The password for pcpcp is root. If you like change use: ```sudo passwd pcpc```
 6. For each SLAVE instance run the install script from the MASTER node:
 ```ssh -i <path-to-pem-file>  <connection-string-for-the-EC2-instace>  'bash -s' < install.sh```
-7. If needed change the pcpc passowrd on each slave
+
 
 The program will create a new user pcpc and exchanges the given ssh keys.
 
