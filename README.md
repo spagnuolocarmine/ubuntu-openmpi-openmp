@@ -14,7 +14,8 @@ This project provides scripts and tutorial to install OpenMPI and OpenMP on a Ub
 
 ## Installing
 
-1. Copy on the MASTER node, from your local machine, the pem key: ``scp -i "k.pem" k.pem ubuntu@ec2-34-239-142-46.compute-1.amazonaws.com:```
+1. Copy on the MASTER node, from your local machine, the pem key: 
+```scp -i "k.pem" k.pem ubuntu@ec2-34-239-142-46.compute-1.amazonaws.com:```
 2. Login on the master node:
 ```ssh -i "k.pem" ubuntu@ec2-34-239-142-46.compute-1.amazonaws.com```
 3. Clone the repository:
