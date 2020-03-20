@@ -29,7 +29,7 @@ This project provides scripts and tutorial to install OpenMPI and OpenMP on a Ub
 ### Test 
 
 1. On the MASTER node login in pcpc
-```sudo login pcpc```, passowrd: root
+```sudo login pcpc```, password: root
 2. Local login 
 ```ssh localhost```
 3. Remote login on a slave node
