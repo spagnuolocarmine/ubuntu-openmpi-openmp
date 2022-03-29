@@ -9,31 +9,32 @@ This project provides scripts and tutorial to install OpenMPI and OpenMP on a Ub
 ## Cluster Scenario
 
 - 1 MASTER Node, here you have to generate the ssh-key and update the script.
-- N SLAVEs, here you have to run the script using the keys generated on the master node.
-
+- N WORKERs, here you have to run the script using the keys generated on the master node.
 
 ## Installing
 
-1. Copy on the MASTER node, from your local machine, the pem key: 
-```scp -i "k.pem" k.pem ubuntu@ec2-34-239-142-46.compute-1.amazonaws.com:```
-2. Login on the master node:
-```ssh -i "k.pem" ubuntu@ec2-34-239-142-46.compute-1.amazonaws.com```
+1. Copy on the MASTER node, from your local machine, the ssh-key using the External IP: 
+```scp -i "<ssh-key-file>" <ssh-key-file> username@<instance-External-IP>:```
+2. Login on the master node using the External IP:
+```ssh -i <ssh-key-file> username@<instance-External-IP>:```
 3. Clone the repository:
 ```git clone https://github.com/spagnuolocarmine/ubuntu-openmpi-openmp.git```
 4. Generates the installing script for yourt cluster:
 ```source generateInstall.sh```, results in a ```install.sh``` script with new ssh-keys for the cluster.
 5. Run the script ```install.sh``` on the MASTER from the ubuntu user.
-6. For each SLAVE instance run the install script from the MASTER node (ubuntu user):
-```ssh -i <path-to-pem-file>  <connection-string-for-the-EC2-instace>  'bash -s' < install.sh```
+6. For each WORKER instance run the install script from the MASTER node (ubuntu user):
+```ssh -i <ssh-key-file> username@<instance-External-IP> 'bash -s' < install.sh```
+E.G. ```ssh -i mykey myusername@12.345.67.890 'bash -s' < install.sh``` 
 
-_The passowrd for the pcpc user is **root**_
+_The password for the pcpc user is **root**_
+
 ### Test 
 
 1. On the MASTER node login in pcpc
 ```sudo login pcpc```, password: root
 2. Local login 
 ```ssh localhost```
-3. Remote login on a slave node
+3. Remote login on a worker node
 ```ssh IP```
 
 The program will create a new user pcpc and exchanges the given ssh keys.
