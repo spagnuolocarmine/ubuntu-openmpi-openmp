@@ -74,3 +74,4 @@ yow.example.com slots=4 max-slots=4
 
 - Matteo D'Auria (University of Salerno)
 - Carmine Spagnuolo (University of Salerno)
+- Giuseppe D'Ambrosio (University of Salerno)
