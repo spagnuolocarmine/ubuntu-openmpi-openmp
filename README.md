@@ -3,7 +3,7 @@
 This project provides scripts and tutorial to install OpenMPI and OpenMP on a Ubuntu Linux.
 
 ## Prerequisites
- - Ubuntu Linux 18.04 LTS Server Edition - Amzon AMI ami-0f65671a86f061fcd
+ - Ubuntu Linux 18.04 LTS Server Edition 
  - SSH Key
 
 ## Cluster Scenario
