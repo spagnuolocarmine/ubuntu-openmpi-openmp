@@ -21,8 +21,8 @@ This project provides scripts and tutorial to install OpenMPI and OpenMP on a Ub
 ```git clone https://github.com/spagnuolocarmine/ubuntu-openmpi-openmp.git```
 4. Generates the installing script for yourt cluster:
 ```source generateInstall.sh```, results in a ```install.sh``` script with new ssh-keys for the cluster.
-5. Run the script ```install.sh``` on the MASTER from the ubuntu user.
-6. For each WORKER instance run the install script from the MASTER node (ubuntu user):
+5. Run the script ```install.sh``` on the MASTER from your user.
+6. For each WORKER instance run the install script from the MASTER node (your user):
 ```ssh -i <ssh-key-file> username@<instance-External-IP> 'bash -s' < install.sh```
 E.G. ```ssh -i mykey myusername@12.345.67.890 'bash -s' < install.sh``` 
 
