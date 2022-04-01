@@ -16,7 +16,7 @@ This project provides scripts and tutorial to install OpenMPI and OpenMP on a Ub
 1. Copy on the MASTER node, from your local machine, the ssh-key using the External IP: 
 ```scp -i "<ssh-key-file>" <ssh-key-file> username@<instance-External-IP>:```
 2. Login on the master node using the External IP:
-```ssh -i <ssh-key-file> username@<instance-External-IP>:```
+```ssh -i <ssh-key-file> username@<instance-External-IP>```
 3. Clone the repository:
 ```git clone https://github.com/spagnuolocarmine/ubuntu-openmpi-openmp.git```
 4. Generates the installing script for yourt cluster:
