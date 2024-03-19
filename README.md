@@ -18,7 +18,7 @@ This project provides tutorials and scripts to install OpenMPI and OpenMP on Ubu
 
 - 1 MASTER Node, where you must generate the SSH key and update the script.
 - N WORKERs, here you have to run the script using the keys generated on the master node.
-- Install `git` on machines using `sudo apt update && sudo apt install git`.
+- Install `git` where needed using `sudo apt update && sudo apt install git`.
 
 ## Installing
 
@@ -26,15 +26,16 @@ This project provides tutorials and scripts to install OpenMPI and OpenMP on Ubu
 ```scp -i "<ssh-key-file>" <ssh-key-file> username@<instance-External-IP>:```
 2. Login on the MASTER node using the External IP:
 ```ssh -i <ssh-key-file> username@<instance-External-IP>```
-3. Clone the repository:
+3. Install `git` using `sudo apt update && sudo apt install git`.
+4. Clone the repository:
 ```git clone https://github.com/spagnuolocarmine/ubuntu-openmpi-openmp.git```
-4. Generates the installing script for your cluster:
+5. Generates the installing script for your cluster:
 ```source generateInstall.sh```, results in a ```install.sh``` script with new ssh-keys for the cluster.
-5. Run `chmod +x install.sh` and then run the script ```install.sh``` on the MASTER from your user.
-6. The keys are now in the `.ssh` folder of the user `pcpc` and are accessible with `sudo login pcpc` using the password `root`.
-7. Copy both public and private SSH keys into your user space using `sudo cp <ssh-key-file> /home/myusername/.ssh` and use `sudo chown myusername:myusername <ssh-key-file>` to assign proper permissions.
-8. Add the public key to each WORKER instance.
-9. For each WORKER instance, run the install script from the MASTER node (your user):
+6. Run `chmod +x install.sh` and then run the script ```install.sh``` on the MASTER from your user.
+7. The generated keys are now in the `.ssh` folder of the user `pcpc` and are accessible with `sudo login pcpc` using the password `root`.
+8. Copy both public and private SSH keys into your user space using `sudo cp <ssh-key-file> /home/myusername/.ssh` and use `sudo chown myusername:myusername <ssh-key-file>` to assign proper permissions.
+9. Add the public key to each WORKER instance.
+10. For each WORKER instance, run the install script from the MASTER node (your user):
 ```ssh -i <ssh-key-file> username@<instance-External-IP> 'bash -s' < install.sh```
 E.G. ```ssh -i .ssh/id_rsa myusername@12.345.67.890 'bash -s' < install.sh``` 
 
