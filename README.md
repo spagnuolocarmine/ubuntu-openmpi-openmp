@@ -10,8 +10,9 @@ This project provides tutorials and scripts to install OpenMPI and OpenMP on Ubu
 ## SSH Keys
 
 - Generate your SSH key specifying the proper username to use in the `ssh` and `scp` commands: ```ssh-keygen -t rsa -C <username>```.
+- The command will create the `id_rsa` private key and the `id_rsa.pub` public key in the `.ssh` folder.
 - Access the value of the SSH public key using ```cat <ssh-key-file>```.
-- Add it to the machines you need to access.
+- Add the public key to the machines you need to access, i.e., the MASTER node.
 
 ## Cluster Scenario
 
@@ -30,11 +31,14 @@ This project provides tutorials and scripts to install OpenMPI and OpenMP on Ubu
 4. Generates the installing script for your cluster:
 ```source generateInstall.sh```, results in a ```install.sh``` script with new ssh-keys for the cluster.
 5. Run `chmod +x install.sh` and then run the script ```install.sh``` on the MASTER from your user.
-6. For each WORKER instance, run the install script from the MASTER node (your user):
+6. The keys are now in the `.ssh` folder of the user `pcpc` and are accessible with `sudo login pcpc` using the password `root`.
+7. Copy both public and private SSH keys into your user space using `sudo cp <ssh-key-file> /home/myusername/.ssh` and use `sudo chown myusername:myusername <ssh-key-file>` to assign proper permissions.
+8. Add the public key to each WORKER instance.
+9. For each WORKER instance, run the install script from the MASTER node (your user):
 ```ssh -i <ssh-key-file> username@<instance-External-IP> 'bash -s' < install.sh```
 E.G. ```ssh -i .ssh/id_rsa myusername@12.345.67.890 'bash -s' < install.sh``` 
 
-_The password for the pcpc user is **root**_
+_The password for the `pcpc` user is `root`_
 
 ### Test 
 
