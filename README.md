@@ -37,7 +37,7 @@ This project provides tutorials and scripts to install OpenMPI and OpenMP on Ubu
 9. Add the public key to each WORKER instance.
 10. For each WORKER instance, run the install script from the MASTER node (your user):
 ```ssh -i <ssh-key-file> username@<instance-External-IP> 'bash -s' < install.sh```
-E.G. ```ssh -i .ssh/id_rsa myusername@12.345.67.890 'bash -s' < install.sh``` 
+E.G. ```ssh -i .ssh/id_rsa myusername@35.202.249.14 'bash -s' < install.sh``` 
 
 _The password for the `pcpc` user is `root`_
 
@@ -66,9 +66,12 @@ You can test your local environment using the program `hello-mpi.c`.
 
 1. Compile the program: ```mpicc hello-mpi.c -o hello```
 2. Run the porgram: ```mpirun -np 2 ./hello```
-3. Run with more MPI processes on single core ```mpirun -np 3 --oversubscribe a.out```
+3. Run with more MPI processes on single core ```mpirun -np 3 --oversubscribe ./hello```.
 
-You can run directly on a homogeneous cluster machine that has been built using the same install script. You can run: ```mpirun -np 2 --hostfile hfile ./hello```.
+You can run directly on a homogeneous cluster machine that has been built using the same install script. To do so:
+1. Create a host file containing the MASTER IP and all the WORKERS' IPs.
+2. Copy the result of  ```mpicc hello-mpi.c -o hello``` to workers using ``` scp ./hello <worker-External-IP>:/home/pcpc/hello```
+3. Run ```mpirun -np 2 --hostfile hfile ./hello```.
 
 An example of a host file is:
 ```
