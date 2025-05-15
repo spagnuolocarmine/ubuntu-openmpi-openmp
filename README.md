@@ -64,9 +64,11 @@ The program will create a new user, `pcpc`, and exchange the given SSH keys.
 
 You can test your local environment using the program `hello-mpi.c`.
 
-1. Compile the program: ```mpicc hello-mpi.c -o hello```
-2. Run the porgram: ```mpirun -np 2 ./hello```
-3. Run with more MPI processes on single core ```mpirun -np 3 --oversubscribe ./hello```.
+1. On the MASTER node, login to `pcpc` user using ```sudo login pcpc``` with password `root`
+2. Clone the repository: ```git clone https://github.com/spagnuolocarmine/ubuntu-openmpi-openmp.git```
+2. Compile the program: ```mpicc hello-mpi.c -o hello```
+3. Run the porgram: ```mpirun -np 2 ./hello```
+4. Run with more MPI processes on single core ```mpirun -np 3 --oversubscribe ./hello```.
 
 You can run directly on a homogeneous cluster machine that has been built using the same install script. To do so:
 1. Create a host file containing the MASTER IP and all the WORKERS' IPs.
